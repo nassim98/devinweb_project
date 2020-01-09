@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Courses;
+use App\Images;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -24,9 +25,19 @@ class CoursesController extends Controller
     public function submitCourse(Request $request){
         $parameters=$request->except(['_token']);
         $courses = new Courses();
+        $images = new Images();
         $courses->name = $parameters['name'];
         $courses->description = $parameters['description'];
         $courses->Slug = $parameters['slug'];
+        //upload image
+        if($request->hasFile('file')){
+            $filename = $request->file->getClientOriginalName();
+            $extension = $request->file->getClientOriginalExtension();
+            $images->file_name = $filename;
+            $images->imageable_type = $extension;
+            $request->file->storeAs('/public/upload', $filename);
+        }
+        $images->save();
         $courses->save();
         return redirect()->route('showCourse');
     }

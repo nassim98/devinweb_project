@@ -31,7 +31,6 @@ class CategoriesController extends Controller
         //upload image
         if($request->hasFile('file')){
             $filename = $request->file->getClientOriginalName();
-            //$filesize= $request->file->getClientSize();
             $extension = $request->file->getClientOriginalExtension();
             $images->file_name = $filename;
             $images->imageable_type = $extension;

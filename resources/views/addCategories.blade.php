@@ -6,7 +6,7 @@
 
 <body>
 <h1>Add categories</h1>
-<form method="post" action="{{route('submitCat')}}">
+<form method="post" action="{{route('submitCat')}}" enctype="multipart/form-data">
     <div class="form-group" >
         <label for="name" > Category name : </label>
         <input type="text" name="name" class="form-control" id="name" >
@@ -15,7 +15,8 @@
         <label for="slug" > Category slug : </label>
         <input type="text" name="slug" class="form-control" id="slug" >
     </div>
-    <div class="btn btn-mdb-color btn-rounded float-left">
+    <div class="form-group d-flex flex-column">
+        <label for="file">Category image : </label>
         <input type="file" name="file">
     </div>
     <div class="text-center">

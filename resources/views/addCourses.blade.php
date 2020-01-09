@@ -6,7 +6,7 @@
 
 <body>
 <h1>Add courses</h1>
-<form method="post" action="{{route('submitCourse')}}">
+<form method="post" action="{{route('submitCourse')}}" enctype="multipart/form-data">
     <div class="form-group" >
         <label for="name" > Course name : </label>
         <input type="text" name="name" class="form-control" id="name" >
@@ -18,6 +18,10 @@
     <div class="form-group">
         <label for="slug" > Course slug : </label>
         <input type="text" name="slug" class="form-control" id="slug" >
+    </div>
+    <div class="form-group d-flex flex-column">
+        <label for="file">Course image : </label>
+        <input type="file" name="file">
     </div>
     <div class="text-center">
         <button type="submit"  class="btn btn-primary">Submit</button>
