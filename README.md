@@ -7,7 +7,7 @@ Etapes pour accéder au projet :
  - php artisan serve
 
 Liens :
-/addCat > pour ajouter une catégorie
-/showCat > pour afficher les catégories
-/addCourse > pour ajouter un cours
-/showCourse > pour afficher les cours
+ - /addCat > pour ajouter une catégorie
+ - /showCat > pour afficher les catégories
+ - /addCourse > pour ajouter un cours
+ - /showCourse > pour afficher les cours
